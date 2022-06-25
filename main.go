@@ -1,7 +1,7 @@
 package main
 
 import (
-	"codersbot/events"
+	"codersbot/src/events"
 	"fmt"
 	"log"
 	"os"
