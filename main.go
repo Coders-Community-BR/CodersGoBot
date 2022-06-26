@@ -2,38 +2,35 @@ package main
 
 import (
 	"codersbot/src/events"
+	"codersbot/src/util"
 	"fmt"
-	"log"
 	"os"
 	"os/signal"
 	"syscall"
 
 	"github.com/bwmarrin/discordgo"
-	"github.com/joho/godotenv"
 )
 
 func main() {
 
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	token := os.Getenv("TOKEN")
+	token := util.GetEnv("TOKEN")
 
 	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
 		fmt.Println("error creating Discord session,", err)
 		return
 	}
-
+	
+	dg.AddHandler(events.Ready)
 	dg.AddHandler(events.MessageCreate)
+	dg.AddHandler(events.MemberAdd)
+	dg.AddHandler(events.MemberRemoved)
 
-	dg.Identify.Intents = discordgo.IntentsGuildMessages
+	dg.Identify.Intents = discordgo.IntentsAll
 
 	err = dg.Open()
 	if err != nil {
-		fmt.Println("error opening connection,", err)
+		fmt.Println(err)
 		return
 	}
 	

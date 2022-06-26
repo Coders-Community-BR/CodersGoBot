@@ -3,6 +3,7 @@ module codersbot
 go 1.18
 
 require (
+	github.com/AvraamMavridis/randomcolor v0.0.0-20180822172341-208aff70bf2c
 	github.com/bwmarrin/discordgo v0.25.0
 	github.com/joho/godotenv v1.4.0
 )
