@@ -16,7 +16,7 @@ func MemberAdd(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 	member := discordgo.MessageEmbed{
 		Author: &discordgo.MessageEmbedAuthor{
 			IconURL: s.State.User.AvatarURL("1024"),
-			Name:    "Sistema "+ guild.Name,
+			Name:    "Sistema " + guild.Name,
 		},
 		Color: 0x0066ff,
 		Title: "👋 Seja bem-vindo(a) " + m.User.Username + "!",

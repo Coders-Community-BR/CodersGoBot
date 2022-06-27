@@ -12,7 +12,7 @@ func MemberRemoved(s *discordgo.Session, m *discordgo.GuildMemberRemove) {
 
 	member := discordgo.MessageEmbed{
 		Author: &discordgo.MessageEmbedAuthor{
-			Name:    "Sistema "+ guild.Name,
+			Name:    "Sistema " + guild.Name,
 			IconURL: s.State.User.AvatarURL("1024"),
 		},
 		Color: 0x0066ff,

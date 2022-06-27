@@ -20,7 +20,7 @@ func main() {
 		fmt.Println("error creating Discord session,", err)
 		return
 	}
-	
+
 	dg.AddHandler(events.Ready)
 	dg.AddHandler(events.MessageCreate)
 	dg.AddHandler(events.MemberAdd)
@@ -33,7 +33,7 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	
+
 	fmt.Printf("\033[0;34m| CODERS COMMUNITY BOT |\033[0m\n| BOT ONLINE | ID: %s |\n| PRESSIONE CTRL-C PARA PARAR |\n", dg.State.User.ID)
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
