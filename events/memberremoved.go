@@ -1,8 +1,7 @@
 package events
 
 import (
-	"codersbot/src/util"
-
+	"codersbot/util"
 	"github.com/bwmarrin/discordgo"
 )
 

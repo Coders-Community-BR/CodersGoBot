@@ -1,13 +1,12 @@
 package main
 
 import (
-	"codersbot/src/events"
-	"codersbot/src/util"
+	"codersbot/events"
+	"codersbot/util"
 	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
-
 	"github.com/bwmarrin/discordgo"
 )
 
