@@ -7,13 +7,19 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
+	"log"
 	"github.com/bwmarrin/discordgo"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	
 	token := util.GetEnv("TOKEN")
-
 	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
 		fmt.Println("error creating Discord session,", err)
