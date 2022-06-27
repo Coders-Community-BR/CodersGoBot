@@ -1,4 +1,4 @@
-module codersbot
+module github.com/Coders-Community-BR/CodersGoBot
 
 go 1.18
 

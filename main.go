@@ -1,8 +1,8 @@
 package main
 
 import (
-	"codersbot/events"
-	"codersbot/util"
+	"github.com/Coders-Community-BR/CodersGoBot/events"
+	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"fmt"
 	"os"
 	"os/signal"
