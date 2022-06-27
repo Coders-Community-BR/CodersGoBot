@@ -1,15 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"github.com/Coders-Community-BR/CodersGoBot/events"
 	"github.com/Coders-Community-BR/CodersGoBot/util"
-	"fmt"
+	"github.com/bwmarrin/discordgo"
+	"github.com/joho/godotenv"
+	"log"
 	"os"
 	"os/signal"
 	"syscall"
-	"log"
-	"github.com/bwmarrin/discordgo"
-	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 		log.Fatal(err)
 		return
 	}
-	
+
 	token := util.GetEnv("TOKEN")
 	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
