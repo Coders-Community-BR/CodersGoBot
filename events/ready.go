@@ -1,10 +1,9 @@
 package events
 
 import (
-	"time"
-
-	"github.com/Coders-Community-BR/CodersGoBot/src/util"
+	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
+	"time"
 )
 
 func Ready(s *discordgo.Session, m *discordgo.Ready) {
