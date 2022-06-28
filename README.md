@@ -1,7 +1,9 @@
-# Bot Oficial Coders Community
-
-
-<img align="left" width="200" height="230" src="./assets/cc-logo.png" alt="Coders Community Logo">
+<p align="center"> 
+	<kbd>
+		<img align="center" width="100" height="100" src="./assets/cc-logo.png" alt="Coders Community Logo">
+	</kbd>
+</p>
+<h1 align="center"> Bot Oficial Coders Community </h1>
 
 
 Bem-vindo ao repositório do nosso bot! Ele foi feito totalmente utilizando a linguagem Go, e desenvolvido com contribuições principalmente da nossa staff, bem como da comunidade como um todo.
@@ -56,5 +58,5 @@ Para efetuar um PR você deverá seguir os seguintes passos:
 5. Depois disso, abra um PR para o merge da sua branch, com a nossa branch dev.
 -----
 <p align="center">
-    <img width = "330" height ="200" src="./assets/gopher1.png" alt="Gopher"">
+    <img width="330" height="200" src="./assets/gopher1.png" alt="Gopher"">
 </p>
