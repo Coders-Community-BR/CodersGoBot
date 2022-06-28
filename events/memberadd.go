@@ -1,6 +1,8 @@
 package events
 
 import (
+	"time"
+
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
 )
@@ -17,7 +19,7 @@ func MemberAdd(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 			IconURL: s.State.User.AvatarURL("1024"),
 			Name:    "Sistema " + guild.Name,
 		},
-		Color: 0x0066ff,
+		Color: util.GetRandomColor(),
 		Title: "👋 Seja bem-vindo(a) " + m.User.Username + "!",
 		Thumbnail: &discordgo.MessageEmbedThumbnail{
 			URL: m.User.AvatarURL("1024"),
@@ -27,6 +29,7 @@ func MemberAdd(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
 			Text:    "Sistema de Recepção",
 			IconURL: guild.IconURL(),
 		},
+		Timestamp: time.Now().Format(time.RFC3339),
 	}
 	s.ChannelMessageSendComplex(channel, &discordgo.MessageSend{
 		Content: m.User.Mention(),
