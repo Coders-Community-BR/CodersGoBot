@@ -12,17 +12,34 @@ import (
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
+	"github.com/sirupsen/logrus"
 )
 
+func discordGoLogger(level, caller int, format string, args ...interface{}) {
+	switch level {
+	case discordgo.LogError:
+		logrus.Errorf(format, args...)
+	case discordgo.LogWarning:
+		logrus.Warnf(format, args...)
+	case discordgo.LogInformational:
+		logrus.Infof(format, args...)
+	case discordgo.LogDebug:
+		logrus.Debugf(format, args...)
+	}
+}
+
 func main() {
+	discordgo.Logger = discordGoLogger
+	logrus.SetFormatter(&logrus.TextFormatter{
+		FullTimestamp: true,
+	})
 	if err := godotenv.Load(); err != nil {
-		log.Fatal(err)
-		return
+		logrus.Panicf("Error loading .env file: %v", err)
 	}
 	token := util.GetEnv("TOKEN")
 	dg, err := discordgo.New("Bot " + token)
 	if err != nil {
-		fmt.Println("error creating Discord session", err)
+		logrus.Fatalf("Error creating Discord session: %s", err)
 		return
 	}
 	dg.LogLevel = discordgo.LogWarning
@@ -52,6 +69,4 @@ func main() {
 	sc := make(chan os.Signal, 1)
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
 	<-sc
-
-	log.Println("Removing commands...")
 }
