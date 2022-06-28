@@ -1,13 +1,23 @@
 package events
 
 import (
+	"log"
+	"time"
+
+	"github.com/Coders-Community-BR/CodersGoBot/commandHandler"
+	_ "github.com/Coders-Community-BR/CodersGoBot/commands/info"
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
-	"time"
 )
 
 func Ready(s *discordgo.Session, m *discordgo.Ready) {
-	guild, _ := s.Guild(util.GetEnv("GUILD_ID"))
+
+	guild, err := s.Guild(util.GetEnv("GUILD_ID"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Println("Adding commands...")
+	commandHandler.RegisterCommands(s, guild)
 	go func(s *discordgo.Session) {
 		for {
 			s.UpdateGameStatus(0, guild.Name)
