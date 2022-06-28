@@ -15,8 +15,7 @@ import (
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
+	if err := godotenv.Load(); err != nil {
 		log.Fatal(err)
 		return
 	}
@@ -38,8 +37,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = dg.Open()
-	if err != nil {
+	if err := dg.Open(); err != nil {
 		log.Fatal(err)
 	}
 	defer dg.Close()
