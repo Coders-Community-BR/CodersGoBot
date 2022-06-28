@@ -2,12 +2,12 @@ package info
 
 import (
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/Coders-Community-BR/CodersGoBot/commandHandler"
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
+	"github.com/sirupsen/logrus"
 )
 
 func ServerInfo(context commandHandler.Context) {
@@ -18,7 +18,7 @@ func ServerInfo(context commandHandler.Context) {
 	}
 	owner, err := context.Session.User(guild.OwnerID)
 	if err != nil {
-		log.Printf("[ERROR] %s", err)
+		logrus.Errorf("Error getting owner: %s", err)
 		context.ReplyText("Não consegui encontrar o dono do servidor.")
 		return
 	}
@@ -93,7 +93,7 @@ func ServerInfo(context commandHandler.Context) {
 	}
 	err = context.ReplyEmbed(embed)
 	if err != nil {
-		log.Printf("Error sending message: %v\n", err)
+		logrus.Errorf("Error sending message: %v\n", err)
 	}
 }
 
