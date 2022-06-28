@@ -5,11 +5,11 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-func Ping(cx commandHandler.Context) {
+func ping(cx commandHandler.Context) {
 	cx.ReplyText("Pong!")
 }
 func init() {
-	commandHandler.AddCommand(Ping, &discordgo.ApplicationCommand{
+	commandHandler.AddCommand(ping, &discordgo.ApplicationCommand{
 		Name:        "ping",
 		Description: "Pong!",
 	})
