@@ -1,6 +1,8 @@
 package events
 
 import (
+	"time"
+
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
 )
@@ -14,7 +16,7 @@ func MemberRemoved(s *discordgo.Session, m *discordgo.GuildMemberRemove) {
 			Name:    "Sistema " + guild.Name,
 			IconURL: s.State.User.AvatarURL("1024"),
 		},
-		Color: 0x0066ff,
+		Color: util.GetRandomColor(),
 		Title: "🖐 Adeus " + m.User.Username + "!",
 		Thumbnail: &discordgo.MessageEmbedThumbnail{
 			URL: m.User.AvatarURL("1024"),
@@ -24,6 +26,7 @@ func MemberRemoved(s *discordgo.Session, m *discordgo.GuildMemberRemove) {
 			Text:    "Sistema de Recepção",
 			IconURL: guild.IconURL(),
 		},
+		Timestamp: time.Now().Format(time.RFC3339),
 	}
 	s.ChannelMessageSendEmbed(channel, &member)
 }
