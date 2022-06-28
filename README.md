@@ -1,18 +1,16 @@
-# Bot Oficial Coders Community
-
-<p align="center">
-    <img width = "400" height ="380" src="./assets/cc-logo.png" alt="Coders Community Logo">
+<p align="center"> 
+	<kbd>
+		<img align="center" width="100" height="100" src="./assets/cc-logo.png" alt="Coders Community Logo">
+	</kbd>
 </p>
+<h1 align="center"> Bot Oficial Coders Community </h1>
+
 
 Bem-vindo ao repositório do nosso bot! Ele foi feito totalmente utilizando a linguagem Go, e desenvolvido com contribuições principalmente da nossa staff, bem como da comunidade como um todo.
 
 ### Por quê Go?
 
 Golang, ou Go para os mais íntimos é uma linguagem que tem crescido muito em popularidade nos últimos anos, e já está sendo utilizada amplamente no mercado. Ela é compilada, rápida, e fácil de se ler e aprender. Então, além de ser do interesse da maior parte dos desenvolvedores atualmente aprender essa fantástica linguagem, acreditamos que mesmo quem não está tão abituado a ela conseguirá contribuir tranquilamente ao nosso bot.
-
-<p align="center">
-    <img width = "330" height ="200" src="./assets/gopher1.png" alt="Gopher"">
-</p>
 
 ### Regras do repositório
 
@@ -58,3 +56,7 @@ Para efetuar um PR você deverá seguir os seguintes passos:
    ```
 
 5. Depois disso, abra um PR para o merge da sua branch, com a nossa branch dev.
+-----
+<p align="center">
+    <img width="330" height="200" src="./assets/gopher1.png" alt="Gopher"">
+</p>
