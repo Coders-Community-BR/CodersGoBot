@@ -1,6 +1,7 @@
 #!/bin/bash
 
 service_path="/etc/systemd/system"
+ln_service_path="lib/systemd/system"
 bin_path="/root/go/bin/CodersGoBot"
 
 if [ "$EUID" -ne 0 ]
@@ -32,5 +33,10 @@ cp ./.env "${bin_path}"
 echo "Build efetuada com sucesso."
 cp ./service/codersbot.service "${service_path}"
 
-systemctl enable --now codersbot.service
+systemctl start codersbot.service
+systemctl enable codersbot.service
+if [ ! -f "${ln_service_path}/codersbot.service" ];
+then
+    ln -s /etc/systemd/system/codersbot.service /lib/systemd/system
+fi
 echo "Serviço criado e iniciado."
