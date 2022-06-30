@@ -27,7 +27,6 @@ if [ ! -d "$bin_path" ];
 then
     mkdir /root/go/bin/CodersGoBot
 fi
-
 go build -o "${bin_path}/bot"
 cp ./.env "${bin_path}"
 echo "Build efetuada com sucesso."
