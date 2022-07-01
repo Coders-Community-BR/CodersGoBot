@@ -1,0 +1,15 @@
+[Unit]
+Description=Bot do Discord da Coders Community
+StartLimitBurst=30
+StartLimitIntervalSec=150
+
+[Service]
+ExecStart=/root/go/bin/CodersGoBot/bot
+WorkingDirectory=/root/go/bin/CodersGoBot
+User=root
+Group=root
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
