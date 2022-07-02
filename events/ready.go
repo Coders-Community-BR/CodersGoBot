@@ -21,7 +21,7 @@ func Ready(s *discordgo.Session, m *discordgo.Ready) {
 	go func(s *discordgo.Session) {
 		for {
 			s.UpdateGameStatus(0, guild.Name)
-			time.Sleep(time.Duration(20 * time.Second))
+			time.Sleep(time.Duration(5 * time.Second))
 			if guild := util.GetStateGuild(s, util.GetEnv("GUILD_ID")); guild != nil {
 				s.UpdateListeningStatus(fmt.Sprintf("%d membros", guild.MemberCount))
 			}
