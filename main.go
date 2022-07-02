@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/Coders-Community-BR/CodersGoBot/commandHandler"
 	"github.com/Coders-Community-BR/CodersGoBot/events"
+	"github.com/Coders-Community-BR/CodersGoBot/handler"
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
@@ -49,7 +49,7 @@ func main() {
 	dg.AddHandler(events.MessageCreate)
 	dg.AddHandler(events.MemberAdd)
 	dg.AddHandler(events.MemberRemoved)
-	dg.AddHandler(commandHandler.Get)
+	dg.AddHandler(handler.Get)
 	dg.Identify.Intents = discordgo.IntentsAll
 
 	coders, err := dg.Guild(os.Getenv("GUILD_ID"))
@@ -60,7 +60,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer dg.Close()
-	defer commandHandler.RemoveCommands(dg, coders)
+	defer handler.RemoveCommands(dg, coders)
 
 	fmt.Printf(
 		"\033[0;34m| CODERS COMMUNITY BOT |\033[0m\n| BOT ONLINE | ID: %s |\n| PRESSIONE CTRL-C PARA PARAR |\n",
