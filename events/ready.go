@@ -20,7 +20,7 @@ func Ready(s *discordgo.Session, m *discordgo.Ready) {
 	go func(s *discordgo.Session) {
 		for {
 			s.UpdateGameStatus(0, guild.Name)
-			time.Sleep(20)
+			time.Sleep(time.Duration(20 * time.Second))
 			s.UpdateGameStatus(0, "0 membros")
 		}
 	}(s)
