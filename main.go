@@ -45,7 +45,7 @@ func main() {
 	dg.LogLevel = discordgo.LogWarning
 	dg.StateEnabled = true
 
-	//dg.AddHandler(events.Ready)
+	dg.AddHandler(events.Ready)
 	dg.AddHandler(events.MessageCreate)
 	dg.AddHandler(events.MemberAdd)
 	dg.AddHandler(events.MemberRemoved)
@@ -67,6 +67,6 @@ func main() {
 		dg.State.User.ID,
 	)
 	sc := make(chan os.Signal, 1)
-	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
+	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 }
