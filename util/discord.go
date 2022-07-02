@@ -3,7 +3,7 @@ package util
 import (
 	"fmt"
 
-	"github.com/Coders-Community-BR/CodersGoBot/commandHandler"
+	"github.com/Coders-Community-BR/CodersGoBot/handler"
 	"github.com/bwmarrin/discordgo"
 )
 
@@ -11,7 +11,7 @@ func CodeBlock(code interface{}) string {
 	return fmt.Sprintf("`%s`", code)
 }
 
-func GetUserNameByContext(context *commandHandler.Context) string {
+func GetUserNameByContext(context *handler.Context) string {
 	member := context.Event.Member
 	user := context.Event.Member.User
 	if member.Nick != "" {

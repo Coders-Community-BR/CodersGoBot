@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Coders-Community-BR/CodersGoBot/commandHandler"
+	"github.com/Coders-Community-BR/CodersGoBot/handler"
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
 	"github.com/sirupsen/logrus"
 )
 
-func ServerInfo(context commandHandler.Context) {
+func ServerInfo(context handler.Context) {
 	guild := util.GetStateGuild(context.Session, context.Event.GuildID)
 	if guild == nil {
 		context.ReplyText("Não consegui encontrar o servidor.")
@@ -98,7 +98,7 @@ func ServerInfo(context commandHandler.Context) {
 }
 
 func init() {
-	commandHandler.AddCommand(ServerInfo, &discordgo.ApplicationCommand{
+	handler.AddCommand(ServerInfo, &discordgo.ApplicationCommand{
 		Name:        "server",
 		Description: "mostra as informações do servidor",
 	})

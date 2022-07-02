@@ -1,15 +1,15 @@
 package info
 
 import (
-	"github.com/Coders-Community-BR/CodersGoBot/commandHandler"
+	"github.com/Coders-Community-BR/CodersGoBot/handler"
 	"github.com/bwmarrin/discordgo"
 )
 
-func Ping(cx commandHandler.Context) {
+func Ping(cx handler.Context) {
 	cx.ReplyText("Pong!")
 }
 func init() {
-	commandHandler.AddCommand(Ping, &discordgo.ApplicationCommand{
+	handler.AddCommand(Ping, &discordgo.ApplicationCommand{
 		Name:        "ping",
 		Description: "Pong!",
 	})
