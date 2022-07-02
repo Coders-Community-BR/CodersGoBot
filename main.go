@@ -45,7 +45,7 @@ func main() {
 	dg.LogLevel = discordgo.LogWarning
 	dg.StateEnabled = true
 
-	dg.AddHandler(events.Ready)
+	//dg.AddHandler(events.Ready)
 	dg.AddHandler(events.MessageCreate)
 	dg.AddHandler(events.MemberAdd)
 	dg.AddHandler(events.MemberRemoved)
