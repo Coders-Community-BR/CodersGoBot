@@ -1,6 +1,7 @@
 package events
 
 import (
+	"fmt"
 	"time"
 
 	_ "github.com/Coders-Community-BR/CodersGoBot/commands/info"
@@ -20,8 +21,10 @@ func Ready(s *discordgo.Session, m *discordgo.Ready) {
 	go func(s *discordgo.Session) {
 		for {
 			s.UpdateGameStatus(0, guild.Name)
-			time.Sleep(time.Duration(20 * time.Second))
-			s.UpdateGameStatus(0, "0 membros")
+			time.Sleep(time.Duration(5 * time.Second))
+			if guild := util.GetStateGuild(s, util.GetEnv("GUILD_ID")); guild != nil {
+				s.UpdateListeningStatus(fmt.Sprintf("%d membros", guild.MemberCount))
+			}
 		}
 	}(s)
 }
