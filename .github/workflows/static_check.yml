@@ -3,7 +3,7 @@ on: ["push", "pull_request"]
 
 jobs:
   ci:
-	name: "Run static check"
+	name: "Run checks"
 	runs-on: ubuntu-latest
 	steps:
 	- uses: actions/checkout@v1
