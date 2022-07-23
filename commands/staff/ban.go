@@ -26,6 +26,7 @@ func Ban(cx handler.Context){
 	var dias = int(optionMap["dias"].IntValue())
 	if dias > 7 || dias < 0 {
 		cx.ReplyText("❌ Você deve informar de 0 a 7 dias.")
+		return
 	}
 	
 	if optionMap["usuario"].Value == cx.Event.Member.User.ID {
