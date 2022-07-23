@@ -11,7 +11,7 @@ import (
 
 
 func Ban(cx handler.Context){
-	channel := util.GetEnv("PUNISHMENT_CHANNEL_ID")
+	channel := util.GetEnv("PUNISHMENT_ID")
 	if channel == "" {
 		channel = cx.Event.ChannelID
 	}
