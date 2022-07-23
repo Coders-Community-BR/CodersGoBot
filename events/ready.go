@@ -5,6 +5,7 @@ import (
 	"time"
 
 	_ "github.com/Coders-Community-BR/CodersGoBot/commands/info"
+	_ "github.com/Coders-Community-BR/CodersGoBot/commands/staff"
 	"github.com/Coders-Community-BR/CodersGoBot/handler"
 	"github.com/Coders-Community-BR/CodersGoBot/util"
 	"github.com/bwmarrin/discordgo"
