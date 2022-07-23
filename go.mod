@@ -3,7 +3,7 @@ module github.com/Coders-Community-BR/CodersGoBot
 go 1.18
 
 require (
-	github.com/bwmarrin/discordgo v0.25.0
+	github.com/bwmarrin/discordgo v0.25.1-0.20220714214021-0feaae8f1b39
 	github.com/joho/godotenv v1.4.0
 	github.com/sirupsen/logrus v1.8.1
 )
